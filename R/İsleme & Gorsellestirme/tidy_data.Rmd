@@ -1,0 +1,20 @@
+```{r}
+table4a%>%
+  gather("1999","2000",key="year",value="cases")
+```
+```{r}
+table2%>%
+  spread(key="type",value="count")
+```
+```{r}
+table3%>%
+  separate(rate,into=c("var1","var2"))
+```
+```{r}
+table5%>%
+  unite(new,century,year,sep="")
+```
+```{r}
+library(help = "stats")
+```
+

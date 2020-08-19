@@ -1,0 +1,37 @@
+```{r}
+myvector <- 1:6
+myvector2 <- 2:13
+```
+
+
+```{r}
+install.packages("lubridate")
+library(lubridate)
+
+df1 <- data.frame(yas=c(1,2,3),
+              boy=c(3,4,5),
+              dogum=c("20100201","20110522","20090430")
+              )
+
+str(df1)
+
+
+ymd("20110522")
+```
+```{r}
+a <- c(2,3,4,5,2,5,6,2)
+sts <- "samet"
+
+sts[1][2]
+```
+```{r}
+df <- mpg[,c("displ","cyl","cty")]
+
+apply(df,2,sum)
+```
+```{r}
+data()
+```
+
+
+

@@ -1,0 +1,33 @@
+```{r}
+#mutate fonksiyonu kullanılır
+df <- flights
+
+mutate(df,
+       kazanc = arr_delay - dep_delay,
+       hiz=distance/arr_time*60,
+       )
+
+transmute(df,
+       kazanc = arr_delay - dep_delay,
+       hiz=distance/arr_time*60,
+       )
+```
+
+#VERİ ÖZETLEME
+
+```{r}
+df %>%
+  select(contains("time")) %>%
+  filter(dep_time > 550)
+```
+
+
+```{r}
+df %>%
+  group_by(carrier) %>%
+  summarise( n = n(),
+             ort_gecikme=mean(dep_delay, na.rm=T),
+             sd=sd(dep_delay))
+```
+
+

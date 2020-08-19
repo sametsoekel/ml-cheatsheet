@@ -1,0 +1,50 @@
+```{r}
+df <- flights
+
+df %>%
+  select(dep_delay,day,carrier,distance) %>%
+  filter(dep_delay>10) %>%
+  group_by(carrier) %>%
+  summarise(n=n(),
+            ortalama=mean(dep_delay),
+            mean(distance)) %>%
+  arrange(desc(ortalama))
+  
+#Baya Güzel Şeyler OluyoR
+```
+
+```{r}
+a <- select(df, dep_delay, month, day, dep_time)
+
+b <- select(df,6:10)
+
+select(df,contains("delay")) #sadece delay içerenleri seçiyor
+```
+
+
+```{r}
+
+#Gözlem Nasıl Seçilir
+
+filter(df, dep_time>517) #dep time 517 den büyük olan gözlemlerial
+
+b <- filter(df, dep_delay>mean(dep_delay, na.rm=T))
+#na.rm ortalama alırken eksik değerleri atla
+#sadece havayolu şirketlerini öğrenmek istiyorum
+
+select(b, carrier)
+
+#en çok gecikenleri sıralayacağım
+b <- select(b, carrier, dep_delay)
+
+arrange(b,desc(dep_delay))#Yaptım
+
+
+top_n(df,10)# ilk 10 gözlem
+
+slice(df,100:110)#belirli bir aralıkta gözlem seçme
+
+```
+```{r}
+#değişken olu
+```
